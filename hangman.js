@@ -79,7 +79,7 @@
             else {
                // update game with the guess
                // ensure that is lowercase
-               guess.toLocaleLowerCase();
+               guess = guess.toLowerCase();
                      // nested loop here
                for (var j = 0; j<selectedWord.length; j++){
                   if(selectedWord[j] === guess) { // if guess is right
