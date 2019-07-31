@@ -52,6 +52,7 @@
      var answerArr = [];
      //  set up the tracking variable
      var lettersToFind = selectedWord.length;
+     var guessTry = 10;
       // replace each letter with __ 
             for(var i =0; i<selectedWord.length; i++){
                answerArr[i] = "__";
@@ -60,7 +61,7 @@
 // Game Loop starts here
 
    // While the word has not been guessed 
-       while(lettersToFind>0){ // no more letters to find => letterToFind = 0 means the word is guessed
+       while(lettersToFind>0 && guessTry>0){ // no more letters to find => letterToFind = 0 means the word is guessed
             // show player their progress
             alert(answerArr.join(" "));
             // 3 get a guess from the player
@@ -73,13 +74,14 @@
             else if(guess.length !== 1) {
                alert("Please enter a single letter");
             }
-            // toLowerCase
-            
+    
             // if valid 
             else {
                // update game with the guess
                // ensure that is lowercase
                guess = guess.toLowerCase();
+               // remove one attempt
+               guessTry--;
                      // nested loop here
                for (var j = 0; j<selectedWord.length; j++){
                   if(selectedWord[j] === guess) { // if guess is right
@@ -93,7 +95,15 @@
 
        // show answer
        alert(answerArr.join(" "));
-       alert("Congrats! The answer is "+ selectedWord+ " !");
+
+       if (guessTry> 0 && lettersToFind===0){
+         alert("Congrats! The answer is " +selectedWord+ " !");      
+          }
+      else {
+         alert("Sorry! The answer is " +selectedWord+ " !");
+       }
+      
+       
     
 
 
