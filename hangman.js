@@ -85,7 +85,9 @@
          
        } // end of game loop
 
-       
+       // show answer
+       alert(answerArr.join(" "));
+       alert("Congrats! The answer is "+ selectedWord+ " !");
     
 
 
