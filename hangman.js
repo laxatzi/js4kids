@@ -48,7 +48,45 @@
     
      // set up answer array
      var answerArr = [];
+     //  set up the tracking variable
+     var lettersToFind = selectedWord.length;
+      // replace each letter with __ 
+            for(var i =0; i<selectedWord.length; i++){
+               answerArr[i] = "__";
+            }
 
+// Game Loop starts here
+
+   // While the word has not been guessed 
+       while(letterToFind>0){ // no more letters to find => letterToFind = 0 means the word is guessed
+            // show player their progress
+            alert(answerArr.join(" "));
+            // 3 get a guess from the player
+            var guess = prompt("Guess a letter of choose to quit");
+            // 4 if player wants quitting 
+            if(guess === null) { // when canceling prompt value converted to null 
+               break; // stopping the loop
+            }
+            // 5. check if valid
+            else if(guess.length !== 1) {
+               alert("Please enter a single letter");
+            }
+            // if valid 
+            else {
+               // update game with the guess
+                     // nested loop here
+               for (var j = 0; j<selectedWord.length; j++){
+                  if(selectedWord[j] === guess) { // if guess is right
+                     answerArr[j] = guess;  // replace blank with guess
+                     lettersToFind--; // minus one letter to find
+                  }
+               }
+            }
+         
+       } // end of game loop
+
+       
+    
 
 
 
