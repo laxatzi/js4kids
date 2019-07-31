@@ -30,7 +30,7 @@ var output= "";
       }
       else if (input[j] === "e"){
          output += 3;
-      }
+       }
       else if (input[j]=== "o"){
          output += 0;
       }
