@@ -32,13 +32,15 @@
 // 1. Will "feed" the game with some words and then let it "choose" one randomly. This is gonna be our hangman word
 
      var words = [
-         "Thessaloniki",
-         "Livorno",
-         "Salerno",
-         "Venice",
-         "Athens",
-         "Heraklion",
-         "Istanbul"
+         "thessaloniki",
+         "livorno",
+         "salerno",
+         "venice",
+         "athens",
+         "heraklion",
+         "istanbul",
+         "smyrna",
+         "alexandria"
      ]
 
      var selectedWord = words[Math.floor(Math.random() * words.length)];
@@ -58,7 +60,7 @@
 // Game Loop starts here
 
    // While the word has not been guessed 
-       while(letterToFind>0){ // no more letters to find => letterToFind = 0 means the word is guessed
+       while(lettersToFind>0){ // no more letters to find => letterToFind = 0 means the word is guessed
             // show player their progress
             alert(answerArr.join(" "));
             // 3 get a guess from the player
@@ -71,9 +73,13 @@
             else if(guess.length !== 1) {
                alert("Please enter a single letter");
             }
+            // toLowerCase
+            
             // if valid 
             else {
                // update game with the guess
+               // ensure that is lowercase
+               guess.toLocaleLowerCase();
                      // nested loop here
                for (var j = 0; j<selectedWord.length; j++){
                   if(selectedWord[j] === guess) { // if guess is right
