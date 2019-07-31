@@ -13,3 +13,16 @@ for(var j = 0; j<10; j++){
 // check the log to see if works
 console.log(randomString);
 
+// Exercise #3
+// Turn text into h4ck3r sp34k!
+
+var input = "javascript is awesome!";
+var output= "";
+
+// The actual loop
+   for(var j =0; j<input.length; j++){
+      output += input[j];
+   }
+
+//log to check
+// console.log(output);
