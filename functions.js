@@ -17,4 +17,14 @@ var aRandomAnimal = randomAnimals[Math.floor(Math.random()*randomAnimals.length)
 // join into a sentence
 var randomSentence = "Your "+aRandomBodyPart+" is like a "+ aRandomAdjective +" "+ aRandomAnimal +"!!!";
 
-console.log(randomSentence);
+
+
+// REFACTORING CODE IN INSULT RANDOM GENERATOR
+// create a function
+var randomPicker = function(arr){
+   return arr[Math.floor(Math.random()*arr.length)];
+}
+
+var randomString = "Your "+randomPicker(randomBodyParts)+" is like a "+randomPicker(randomAdjectives)+" "+randomPicker(randomAnimals)+"!!!";
+
+console.log(randomString);
