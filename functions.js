@@ -25,6 +25,17 @@ var randomPicker = function(arr){
    return arr[Math.floor(Math.random()*arr.length)];
 }
 
+
+
+// Making the random insult gen into a function
+var randomInsultGen = function(){
+var randomBodyParts = ["nose", "hair", "neck"];
+var randomAdjectives= ["smelly", "filthy", "boring"];
+var randomAnimals =["pig", "monkey", "cow"];
+
 var randomString = "Your "+randomPicker(randomBodyParts)+" is like a "+randomPicker(randomAdjectives)+" "+randomPicker(randomAnimals)+"!!!";
 
-console.log(randomString);
+return randomString;  // we have to assign a value to the function(thus "return"), just saving the variable doesn't cut it
+}
+
+console.log(randomInsultGen());
