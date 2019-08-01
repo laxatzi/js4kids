@@ -28,7 +28,20 @@ var medalForScore = function(score) {
    }
 }
 
-console.log(
+// using return instead
+var scoreForMedal = function(score){
+   if (score<5){
+      return "You won the 'Bronze' medal!";
+   }
 
-   medalForScore(4)
+   if(score <10) {
+      return "You won the 'Silver' medal!";
+   }
+       return "You won the 'Gold' medal!";
+
+}
+
+console.log(
+            scoreForMedal(7)
+
 );
