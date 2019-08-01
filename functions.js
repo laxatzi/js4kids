@@ -14,3 +14,7 @@ var aRandomAdjective = randomAdjectives[Math.floor(Math.random()* randomAdjectiv
 // pick a random animal
 var aRandomAnimal = randomAnimals[Math.floor(Math.random()*randomAnimals.length)];
 
+// join into a sentence
+var randomSentence = "Your "+aRandomBodyPart+" is like a "+ aRandomAnimal +" "+ aRandomBodyPart +"!!!";
+
+console.log(randomSentence);
