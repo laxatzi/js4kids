@@ -1,3 +1,5 @@
+// CHALLENGE 1
+
 // Create two functions, add and multiply.
 // Using only these two functions, solve this simple
 // mathematical problem:
@@ -16,3 +18,9 @@ console.log(
 );
 
 
+// CHALLENGE 2
+
+//   Write a function called areArraysSame that takes two arrays
+//   of numbers as arguments. It should return true if the two
+//   arrays are the same (that is, they have the same numbers
+//   in the same order) and false if they’re different
