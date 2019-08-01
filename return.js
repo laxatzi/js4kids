@@ -13,4 +13,22 @@ console.log(
 );
 
 // return INSTEAD OF if...else
+// the if...else way
 
+var medalForScore = function(score) {
+   if (score<5){
+      return "You won the 'Bronze' medal!";
+   }
+   else if(score<10) {
+      return "You won the 'Silver' medal!";
+   }
+
+   else {
+      return "you won the 'Gold' medal!";
+   }
+}
+
+console.log(
+
+   medalForScore(4)
+);
