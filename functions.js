@@ -15,6 +15,6 @@ var aRandomAdjective = randomAdjectives[Math.floor(Math.random()* randomAdjectiv
 var aRandomAnimal = randomAnimals[Math.floor(Math.random()*randomAnimals.length)];
 
 // join into a sentence
-var randomSentence = "Your "+aRandomBodyPart+" is like a "+ aRandomAnimal +" "+ aRandomBodyPart +"!!!";
+var randomSentence = "Your "+aRandomBodyPart+" is like a "+ aRandomAdjective +" "+ aRandomAnimal +"!!!";
 
 console.log(randomSentence);
