@@ -1,13 +1,16 @@
 
 //replace heading text using the DOM.
-
+    //innerHTML
 var headingOne = document.getElementById('main_heading');
 var headingText = "This is the new heading text!";
 
 headingOne.innerHTML = headingText;
 
 // create new elements and add them to the DOM tree
-
+      // createTextNode
+      // createElement
+      //appendChild
+      
 var newParText = document.createTextNode("This is a new paragraph"); // paragraph text
 var newP = document.createElement('p'); // paragraph element
 
