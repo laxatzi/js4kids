@@ -21,7 +21,6 @@ var toggle = function (elem) {
 	show(elem);
 
 };
-
 // Listen for click events
 document.addEventListener('click', function (event) {
 
