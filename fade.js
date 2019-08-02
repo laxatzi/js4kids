@@ -1,12 +1,14 @@
-// Show an element
+// Show an element ...
+
 var show = function (elem) {
-   
+   //To show an element, we first need to get it’s natural height...we use the getHeight function
    var getHeight = function () {
       elem.style.display = 'block'; // Make it visible ... this would suffice on its own (out of the function) if didn't want to animate
       var height = elem.scrollHeight + 'px'; // Get it's height...scrollHeight tells you the height of an element’s content, and store it to a variable. This returns an integer, so we’ll need to add px to the end to use with our inline style.
       elem.style.display = ''; //  Hide it again
       return height;  //Finally, we’ll hide our element again by removing the display property, and return our height value.
    };  // end of function
+         // In the above function ...Even though we’re showing and then re-hiding our content, it never shows visibly for users because the function runs so quickly (just a few milliseconds) and thus never actually renders visually in the DOM.
 
    var height = getHeight(); // Get the natural height
 	elem.classList.add('is-visible'); // Make the element visible
@@ -37,10 +39,10 @@ var hide = function (elem) {
 };
 
 // Toggle element visibility
-var toggle = function (elem) {
-
-	// If the element is visible, hide it
-	if (window.getComputedStyle(elem).display === 'block') {
+var toggle = function (elem   ) {
+     
+   // If the element is visible, hide it
+   if(elem.classList.contains('is-visible')) {
 		hide(elem);
 		return;
 	}
@@ -67,13 +69,6 @@ document.addEventListener('click', function (event) {
 
 }, false);
 
-//To show an element, we first need to get it’s natural height
 
-var getHeight = function () {
-	elem.style.display = 'block'; // Make it visible
-	var height = elem.scrollHeight + 'px'; // Get it's height...scrollHeight tells you the height of an element’s content, and store it to a variable. This returns an integer, so we’ll need to add px to the end to use with our inline style.
-	elem.style.display = ''; //  Hide it again
-	return height;  //Finally, we’ll hide our element again by removing the display property, and return our height value.
-};
 
-// In the above function ...Even though we’re showing and then re-hiding our content, it never shows visibly for users because the function runs so quickly (just a few milliseconds) and thus never actually renders visually in the DOM.
+
