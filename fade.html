@@ -1,1 +1,43 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Modifying the DOM</title>
+<!-- styles section -->
+    <style>
+       body {
+          font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+          font-size: 20px;
+          text-align: center;
+       }
+       h1 {
+          font-size: 36px;
+       }
+       .toggle_content {
+           display: none;
+           height: 0;
+           opacity: 1;
+           overflow: hidden;
+        }
+        .toggle_content .is_visible {
+            display: block;
+            height: auto;
+            opacity: 1;
+        }
+    </style>
+<!-- end of styles -->
+</head>
+<body>
+    <h1 id="main_heading">Modifying the DOM!</h1>
+    <p>Let's play!</p>
+
+    <p><a class="toggle" href="#example">Toggle Div</a></p>
+     <div class="toggle_content" id="example">
+        <img src="img/dog.png" alt="">
+     </div>
+<!-- scripts section -->
+<script src="fade.js"></script>
+
+</body>
+</html>
+
 
