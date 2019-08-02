@@ -14,10 +14,15 @@
        }
        .toggle_content {
            display: none;
+           /* fade animation properties*/
+           height: 0;
+           overflow: hidden;
+           transition: height .5s ease-in-out;
           
         }
         .toggle_content .is_visible {
             display: block;
+            height: auto;
         }
     </style>
 <!-- end of styles -->
