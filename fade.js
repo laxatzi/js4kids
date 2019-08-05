@@ -18,8 +18,6 @@ var show = function (elem) {
       window.setTimeout(function () {
          elem.style.height = '';
       }, 350);
-
-
 };
 
 // Hide an element ==> Visible elements, once animated, have a height of auto. To animate hiding them, we need to give them a fixed height to animate down to 0.
@@ -39,7 +37,7 @@ var hide = function (elem) {
 };
 
 // Toggle element visibility
-var toggle = function (elem   ) {
+var toggle = function (elem) {
      
    // If the element is visible, hide it
    if(elem.classList.contains('is-visible')) {
