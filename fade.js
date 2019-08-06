@@ -42,7 +42,7 @@ var toggle = function (elem) {
    // If the element is visible, hide it
    if(elem.classList.contains('is-visible')) {
 		hide(elem);
-		return;
+		// return;
 	}
 
 	// Otherwise, show it
