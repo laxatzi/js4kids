@@ -104,27 +104,50 @@ var pickWord = function() {
    var word = words[Math.floor(Math.random()* words.length)];
    return word;
 }
-var selectedWord = pickWord();
 
 var setUpAnswerArr = function(selectedWord) {
    var answerArray = [];
    for(var i =0; i<selectedWord.length; i++){
          answerArray[i] = "__";
        }
+       return answerArray;
 }
-var answer = setUpAnswerArr(selectedWord);
+
+var updateGameState = function(guess, selectedWord, answerArray) {
+  
+      // update game with the guess
+      // ensure that is lowercase
+            guess = guess.toLowerCase();
+      // remove one attempt
+            guessTry--;
+      // loop
+            for(var j = 0; j<selectedWord.length; j++){
+               if(selectedWord[j] === guess && answerArray[j] === "__"){
+                  // if guess is right AND if answer is NOT already given(thus empty) =>
+               answerArray[j] = guess; // replace bland with guess
+               lettersToFind--;
+               }
+            }
+}
+    // show player their progress
+    var showPlayerProgress = function(answerArray){
+         alert(answerArray.join(" "));
+      };
+
+      var getGuess = function(){
+       return  prompt("Guess a letter or choose to quit!");
+      };
+
+var selectedWord = pickWord();
+var answerArray = setUpAnswerArr(selectedWord);
 var guessTry = selectedWord.length+2;
 var lettersToFind = selectedWord.length;
 
 // While the word has not been guessed 
   while(lettersToFind>0 && guessTry>0){ // no more letters to find => letterToFind = 0 means the word is guessed
       // show player their progress
-      var showPlayerProgress = function(answer){
-         alert(answer.join(" "));
-      };
-      var getGuess = function(){
-         prompt("Guess a letter or choose to quit!");
-      };
+      showPlayerProgress(answerArray);
+
       var guess = getGuess();
       // 4 if player wants quitting 
           if(guess === null) { // when canceling prompt value converted to null 
@@ -136,35 +159,20 @@ var lettersToFind = selectedWord.length;
              }
       // if valid 
            else {
-              var updateGameState = function(guess, selectedWord, answer){
-         // update game with the guess
-         // ensure that is lowercase
-               guess = guess.toLowerCase();
-         // remove one attempt
-               guessTry--;
-         // loop
-               for(var j = 0; j<selectedWord.length; j++){
-                  if(selectedWord[j] === guess && answer[j] === "__"){
-                     // if guess is right AND if answer is NOT already given(thus empty) =>
-                  answer[j] = guess; // replace bland with guess
-                  lettersToFind--;
-                  }
-               }
-              } // end of game loop
-            }
-         }      
-         // update game with the guess
-         // ensure that is lowercase
- //        guess = guess.toLowerCase();
-         // remove one attempt
-  //       guessTry--;
-               // nested loop here
- //        for (var j = 0; j<selectedWord.length; j++){
- //           if(selectedWord[j] === guess && answerArr[j]=== "__") { // if guess is right AND if answer is NOT already given (thus empty)
-//                answerArr[j] = guess;  // replace blank with guess
-//                lettersToFind--; // minus one letter to find
-//             }
+          updateGameState(guess, selectedWord, answerArray);
+         
+         }
+   } // end of game loop
+             
+              // show answer
+   alert(answerArray.join(" "));
+       if (guessTry === 0 ){
+          alert("Sorry no more attempts are allowed! The answer is " +selectedWord+ " !");
+         }
 
-//          }
-//       }
-   
+    else if (guessTry>0){
+         alert("Congrats! The answer is " +selectedWord+ " !");      
+         }
+         else {
+            alert("Sorry you have lost!");
+         }
