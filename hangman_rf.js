@@ -70,15 +70,17 @@
 
 //  // show answer
 //  alert(answerArr.join(" "));
+// if (guessTry === 0 ){
+//    alert("Sorry no more attempts are allowed! The answer is " +selectedWord+ " !");
+//   }
 
-//  if (guessTry>0){
-//    alert("Congrats! The answer is " +selectedWord+ " !");      
-//     }
-// else {
-//    alert("Sorry no more tries! The answer is " +selectedWord+ " !");
-//  }
+// else if (guessTry>0){
+//   alert("Congrats! The answer is " +selectedWord+ " !");      
+//   }
+//   else {
+//      alert("Sorry you have lost!");
+//   }
 
- 
 
 
 
