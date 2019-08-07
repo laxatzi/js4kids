@@ -43,11 +43,11 @@
       // 4 if player wants quitting 
 //     if(guess === null) { // when canceling prompt value converted to null 
  //        break; // stopping the loop
-      }
+  //    }
       // 5. check if valid
   //    else if(guess.length !== 1) {
   //       alert("Please enter a single letter");
-      }
+ //     }
 
       // if valid 
  //     else {
@@ -80,6 +80,26 @@
 //   else {
 //      alert("Sorry you have lost!");
 //   }
+
+
+// REFACTORING THE HANGMAN GAME CODE
+
+// We’re going to rewrite it using functions.
+
+// 1. Will "feed" the game with some words and then let it "choose" one randomly. This is gonna be our hangman word
+
+var words = [
+    "thessaloniki",
+    "livorno",
+    "salerno",
+    "venice",
+    "athens",
+    "heraklion",
+    "istanbul",
+    "smyrna",
+    "alexandria",
+    "salonika"
+ ]
 
 
 
