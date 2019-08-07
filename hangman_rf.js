@@ -120,7 +120,9 @@ console.log(lettersToFind);
 // While the word has not been guessed 
   while(lettersToFind>0 && guessTry>0){ // no more letters to find => letterToFind = 0 means the word is guessed
       // show player their progress
- //     alert(answerArr.join(" "));
+      var showPlayerProgress = function(answerArr){
+         alert(answerArr.join(" "));
+      };
       // 3 get a guess from the player
  //     var guess = prompt("Guess a letter or choose to quit");
       // 4 if player wants quitting 
