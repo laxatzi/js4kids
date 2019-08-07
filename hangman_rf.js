@@ -123,19 +123,21 @@ console.log(lettersToFind);
       var showPlayerProgress = function(answerArr){
          alert(answerArr.join(" "));
       };
-      // 3 get a guess from the player
- //     var guess = prompt("Guess a letter or choose to quit");
+      var getGuess = function(){
+         prompt("Guess a letter or choose to quit!");
+      };
+    
       // 4 if player wants quitting 
-//     if(guess === null) { // when canceling prompt value converted to null 
- //        break; // stopping the loop
-  //    }
+          if(guess === null) { // when canceling prompt value converted to null 
+             break; // stopping the loop
+            }
       // 5. check if valid
-  //    else if(guess.length !== 1) {
-  //       alert("Please enter a single letter");
- //     }
-
+           else if(guess.length !== 1) {
+              alert("Please enter a single letter");
+             }
       // if valid 
- //     else {
+           else {
+              
          // update game with the guess
          // ensure that is lowercase
  //        guess = guess.toLowerCase();
