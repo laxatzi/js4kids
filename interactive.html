@@ -33,12 +33,22 @@
  </header>
 <!-- scripts section -->
 <script>
+// Basic code - pseudocode
+// var id = setInterval(frame, 5);
 
-   
+//       function frame() {
+//       if (/* test for finished */) {
+//          clearInterval(id);
+//       } else {
+//          /* code to change the element style */  
+//       }
+// }
+
+// real code here
       var headingMove = function(){
          var heading = document.getElementById("heading");
          var pos = 0;
-         var id = setInterval(frame, 10);
+         var id = setInterval(frame, 1);
         
          // set the frame function
          function frame(){
