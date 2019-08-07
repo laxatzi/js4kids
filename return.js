@@ -1,16 +1,14 @@
 // using return to leave from a function
 
 var fifthLetterOfName = function(name) {
+
    if(name.length < 5) {
       return;
    }
 
    return "The fifth letter of your name is "+ name[4]+"!";
 }
-
-console.log(
-            fifthLetterOfName("Stavros")
-);
+console.log(fifthLetterOfName('Lambros'));
 
 // return INSTEAD OF if...else
 // the if...else way
@@ -41,7 +39,6 @@ var scoreForMedal = function(score){
 
 }
 
-console.log(
+ console.log(
             scoreForMedal(7)
-
-);
+ );
