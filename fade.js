@@ -1,5 +1,5 @@
-// Show an element ...
 
+// Show an element ...
 var show = function (elem) {
    //To show an element, we first need to get it’s natural height...we use the getHeight function
    var getHeight = function () {
@@ -11,8 +11,9 @@ var show = function (elem) {
          // In the above function ...Even though we’re showing and then re-hiding our content, it never shows visibly for users because the function runs so quickly (just a few milliseconds) and thus never actually renders visually in the DOM.
 
    var height = getHeight(); // Get the natural height
-	elem.classList.add('is-visible'); // Make the element visible
    elem.style.height = height; // Update the max-height
+	elem.classList.add('is-visible'); // Make the element visible
+ 
    
       // Once the transition is complete, remove the inline max-height so the content can scale responsively
       window.setTimeout(function () {
@@ -28,12 +29,12 @@ var hide = function (elem) {
    //set our height back to 0. 
    window.setTimeout(function () {
 		elem.style.height = '0'; // we could use without setTimeout() but...
-   }, 1); //if we run it too quickly, the browser won’t detect the change at all and won’t run. We’ll use setTimeout() with a 1 millisecond delay to make sure the change registers.
+   }, 1); //if we run it too quickly, the browser won’t detect the change at all and won’t run. We’ll use setTimeout() with a 1 millisecond delay to make sure the change registers.*/
    
    // When the transition is complete, hide it
 	window.setTimeout(function () {
 		elem.classList.remove('is-visible');
-	}, 350);
+   }, 350);
 };
 
 // Toggle element visibility
