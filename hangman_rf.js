@@ -100,7 +100,12 @@ var words = [
     "alexandria",
     "salonika"
  ]
-
+ var selectedWord = words[Math.floor(Math.random() * words.length)];
+var pickWord = function() {
+   var selectedWord = words[Math.floor(Math.random()* words.length)];
+   return selectedWord;
+}
+console.log(pickWord());
 
 
 
