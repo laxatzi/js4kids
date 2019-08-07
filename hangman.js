@@ -92,18 +92,20 @@
 
                }
             }
-         
        } // end of game loop
 
        // show answer
        alert(answerArr.join(" "));
+       if (guessTry === 0 ){
+          alert("Sorry no more attempts are allowed! The answer is " +selectedWord+ " !");
+         }
 
-       if (guessTry>0){
+    else if (guessTry>0){
          alert("Congrats! The answer is " +selectedWord+ " !");      
-          }
-      else {
-         alert("Sorry! The answer is " +selectedWord+ " !");
-       }
+         }
+         else {
+            alert("Sorry you have lost!");
+         }
       
        
     

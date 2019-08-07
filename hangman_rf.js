@@ -75,7 +75,7 @@
 //    alert("Congrats! The answer is " +selectedWord+ " !");      
 //     }
 // else {
-//    alert("Sorry! The answer is " +selectedWord+ " !");
+//    alert("Sorry no more tries! The answer is " +selectedWord+ " !");
 //  }
 
  
