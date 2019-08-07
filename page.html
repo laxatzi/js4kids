@@ -21,11 +21,11 @@
 <!-- scripts section -->
 <script>
    var timeUp = function() {
-      console.log("Time is up!");
+      console.log("Time flies!");
 
    }
-  console.log( setTimeout(timeUp, 3000 ));
-   
+var timeoutID = setTimeout(timeUp, 5000);
+clearTimeout(timeoutID);
 </script>
 
 </body>
