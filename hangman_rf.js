@@ -119,14 +119,13 @@ var lettersToFind = selectedWord.length;
 // While the word has not been guessed 
   while(lettersToFind>0 && guessTry>0){ // no more letters to find => letterToFind = 0 means the word is guessed
       // show player their progress
-      var showPlayerProgress = function(answerArr){
+      var showPlayerProgress = function(answer){
          alert(answer.join(" "));
       };
       var getGuess = function(){
          prompt("Guess a letter or choose to quit!");
       };
       var guess = getGuess();
-    
       // 4 if player wants quitting 
           if(guess === null) { // when canceling prompt value converted to null 
              break; // stopping the loop
@@ -152,6 +151,8 @@ var lettersToFind = selectedWord.length;
                   }
                }
               } // end of game loop
+            }
+         }      
          // update game with the guess
          // ensure that is lowercase
  //        guess = guess.toLowerCase();
@@ -167,4 +168,3 @@ var lettersToFind = selectedWord.length;
 //          }
 //       }
    
-//  } // end of game loop
