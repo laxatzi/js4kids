@@ -101,31 +101,31 @@ var words = [
     "salonika"
  ]
 var pickWord = function() {
-   var selectedWord = words[Math.floor(Math.random()* words.length)];
-   return selectedWord;
+   var word = words[Math.floor(Math.random()* words.length)];
+   return word;
 }
 var selectedWord = pickWord();
 
 var setUpAnswerArr = function(selectedWord) {
-   var answerArr = [];
+   var answerArray = [];
    for(var i =0; i<selectedWord.length; i++){
-         answerArr[i] = "__";
+         answerArray[i] = "__";
        }
 }
-var answerArr = setUpAnswerArr(selectedWord);
+var answer = setUpAnswerArr(selectedWord);
 var guessTry = selectedWord.length+2;
 var lettersToFind = selectedWord.length;
-console.log(lettersToFind);
 
 // While the word has not been guessed 
   while(lettersToFind>0 && guessTry>0){ // no more letters to find => letterToFind = 0 means the word is guessed
       // show player their progress
       var showPlayerProgress = function(answerArr){
-         alert(answerArr.join(" "));
+         alert(answer.join(" "));
       };
       var getGuess = function(){
          prompt("Guess a letter or choose to quit!");
       };
+      var guess = getGuess();
     
       // 4 if player wants quitting 
           if(guess === null) { // when canceling prompt value converted to null 
@@ -137,7 +137,21 @@ console.log(lettersToFind);
              }
       // if valid 
            else {
-              
+              var updateGameState = function(guess, selectedWord, answer){
+         // update game with the guess
+         // ensure that is lowercase
+               guess = guess.toLowerCase();
+         // remove one attempt
+               guessTry--;
+         // loop
+               for(var j = 0; j<selectedWord.length; j++){
+                  if(selectedWord[j] === guess && answer[j] === "__"){
+                     // if guess is right AND if answer is NOT already given(thus empty) =>
+                  answer[j] = guess; // replace bland with guess
+                  lettersToFind--;
+                  }
+               }
+              } // end of game loop
          // update game with the guess
          // ensure that is lowercase
  //        guess = guess.toLowerCase();
