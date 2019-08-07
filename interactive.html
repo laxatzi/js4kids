@@ -9,26 +9,31 @@
           font-size: 20px;
           text-align: center;
        }
+       header {
+          width: 100%;
+          background-color: yellow;
+          height: 300px;
+          position: relative;
+       }
        h1 {
           font-size: 36px;
+          display: inline-block;
+          background-color: blue;
+          color: white;
+          padding: 10px;
+          position: absolute;
        }
+
     </style>
 <!-- end of styles -->
 </head>
 <body>
-    <h1 id="heading">Hello World!</h1>
-    <p>Let's play!</p>
+ <header>
+    <h1 id="heading">Lets Play!</h1>
+ </header>
 <!-- scripts section -->
 <script>
-    var leftOffset = 0; 
-    var moveHeading = function () {
-    document.getElementById("#heading").offset({ left: leftOffset });
-    leftOffset++;
-   if (leftOffset > 200) {
-            leftOffset = 0;
-            }
-     };
- setInterval(moveHeading, 30);
+
 </script>
 
 </body>
