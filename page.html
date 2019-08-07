@@ -20,12 +20,21 @@
     <p>Let's play!</p>
 <!-- scripts section -->
 <script>
-   var timeUp = function() {
-      console.log("Time flies!");
+//    var timeUp = function() {
+//       console.log("Time flies!");
 
+//    }
+// var timeoutID = setTimeout(timeUp, 5000);
+// clearTimeout(timeoutID);
+
+var counter = 1;
+var message = function() {
+   console.log("You have been staring at your console for "+counter+" seconds now!");
+   counter++;
    }
-var timeoutID = setTimeout(timeUp, 5000);
-clearTimeout(timeoutID);
+
+var intervalId = setInterval(message, 1000);
+clearInterval(intervalId);
 </script>
 
 </body>
