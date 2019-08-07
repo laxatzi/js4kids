@@ -100,14 +100,53 @@ var words = [
     "alexandria",
     "salonika"
  ]
- var selectedWord = words[Math.floor(Math.random() * words.length)];
 var pickWord = function() {
    var selectedWord = words[Math.floor(Math.random()* words.length)];
    return selectedWord;
 }
-console.log(pickWord());
+var selectedWord = pickWord();
 
+var setUpAnswerArr = function(selectedWord) {
+   var answerArr = [];
+   for(var i =0; i<selectedWord.length; i++){
+         answerArr[i] = "__";
+       }
+}
+var answerArr = setUpAnswerArr(selectedWord);
+var guessTry = selectedWord.length+2;
+var lettersToFind = selectedWord.length;
+console.log(lettersToFind);
 
+// While the word has not been guessed 
+  while(lettersToFind>0 && guessTry>0){ // no more letters to find => letterToFind = 0 means the word is guessed
+      // show player their progress
+ //     alert(answerArr.join(" "));
+      // 3 get a guess from the player
+ //     var guess = prompt("Guess a letter or choose to quit");
+      // 4 if player wants quitting 
+//     if(guess === null) { // when canceling prompt value converted to null 
+ //        break; // stopping the loop
+  //    }
+      // 5. check if valid
+  //    else if(guess.length !== 1) {
+  //       alert("Please enter a single letter");
+ //     }
 
+      // if valid 
+ //     else {
+         // update game with the guess
+         // ensure that is lowercase
+ //        guess = guess.toLowerCase();
+         // remove one attempt
+  //       guessTry--;
+               // nested loop here
+ //        for (var j = 0; j<selectedWord.length; j++){
+ //           if(selectedWord[j] === guess && answerArr[j]=== "__") { // if guess is right AND if answer is NOT already given (thus empty)
+//                answerArr[j] = guess;  // replace blank with guess
+//                lettersToFind--; // minus one letter to find
+//             }
 
-
+//          }
+//       }
+   
+//  } // end of game loop
