@@ -1,1 +1,77 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Animation with JS</title>
+<!-- styles section -->
+    <style>
+       /* styles in here */
+       body {
+          font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+          font-size: 20px;
+       }
+   
+         main {
+            width: 50%;
+            margin: 0 auto;
+         }
+         button {
+            margin-left: 45%;
+         }
+         h1 {
+            color: orangered;
+            text-align: center;
+         }
+         canvas {
+            width: 400px;
+            height: 400px;
+            border: 1px dotted black;
+            margin-left: 20%;
+         }
+    </style>
+<!-- end of styles -->
+</head>
+<body>
+   <main>
+
+         <h1>Animation with JS</h1>
+         <canvas id="whiteBoard"></canvas>
+   </main>
+<!-- scripts section -->
+<script>
+
+
+document.getElementById('whiteBoard').onclick = function(){
+         var canvas = document.getElementById('whiteBoard');
+         var context = canvas.getContext('2d');
+          //draw the first line
+         // set line color and width
+         context.beginPath();
+
+         context.lineWidth = 30;
+         context.strokeStyle = "rgb(205, 40, 40)";
+
+         // position line and execute
+         context.moveTo(25, 50); // horizontal - vertical
+         context.lineTo(400, 50);
+         context.lineCap = "butt";
+         context.stroke();
+
+         // draw the second line 
+         //set line color and width
+         context.lineWidth = 15;
+         context.strokeStyle = "steelblue";
+
+         // position line and execute
+         context.beginPath();
+         context.moveTo(25, 100);
+         context.lineTo(400,100);
+         context.lineCap = "butt";
+         context.stroke();
+
+      };
+</script>
+
+</body>
+</html>
+
 
