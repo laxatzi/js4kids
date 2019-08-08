@@ -47,21 +47,28 @@
    </main>
 <!-- scripts section -->
 <script>
-// store id value
-   var elem = document.getElementById("editable_element");
-//  code here
-   function startEdit() {
-      // make element editable
-      elem.contentEditable = true;
-      elem.focus();
-  } 
+// // store id value
+//    var elem = document.getElementById("editable_element");
 
-   function stopEdit() {
-      //stop editing process
-      elem.contentEditable = false;
-      // show mark up in a message box
-      alert("This is what you wrote: \n"+elem.innerHTML );
-   } 
+//    function startEdit() {
+//       // make element editable
+//       elem.contentEditable = true;
+//       elem.focus();
+//   } 
+
+//    function stopEdit() {
+//       //stop editing process
+//       elem.contentEditable = false;
+//       // show mark up in a message box
+//       alert("This is what you wrote: \n"+elem.innerHTML );
+//    } 
+
+      document.getElementById('whiteBoard').onclick = function(){
+         var canvas = document.getElementById('whiteBoard');
+         var context = canvas.getContext('2d');
+
+         
+      }
 </script>
 
 </body>
