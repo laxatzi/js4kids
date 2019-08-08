@@ -32,43 +32,24 @@
 </head>
 <body>
    <main>
-
          <h1>Animation with JS</h1>
          <canvas id="whiteBoard"></canvas>
    </main>
 <!-- scripts section -->
 <script>
+      var notRunning = true; // prevents double-run bug
 
+      function getColor(){
+         var letters = "0987654321abcdef";
+         var color = "#";
+         for(var j = 0; j<6; j++){
+            color += letters[Math.floor(Math.random() * 16)];
 
-document.getElementById('whiteBoard').onclick = function(){
-         var canvas = document.getElementById('whiteBoard');
-         var context = canvas.getContext('2d');
-          //draw the first line
-         // set line color and width
-         context.beginPath();
+         }
+         return color;
+         }
 
-         context.lineWidth = 30;
-         context.strokeStyle = "rgb(205, 40, 40)";
-
-         // position line and execute
-         context.moveTo(25, 50); // horizontal - vertical
-         context.lineTo(400, 50);
-         context.lineCap = "butt";
-         context.stroke();
-
-         // draw the second line 
-         //set line color and width
-         context.lineWidth = 15;
-         context.strokeStyle = "steelblue";
-
-         // position line and execute
-         context.beginPath();
-         context.moveTo(25, 100);
-         context.lineTo(400,100);
-         context.lineCap = "butt";
-         context.stroke();
-
-      };
+         
 </script>
 
 </body>
