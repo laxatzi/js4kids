@@ -38,7 +38,7 @@
 <!-- scripts section -->
 <script>
       var notRunning = true; // prevents double-run bug
-
+// function to pick up colors
       function getColor(){
          var letters = "0987654321abcdef";
          var color = "#";
@@ -49,7 +49,21 @@
          return color;
          }
 
+      // function to animate colors
+         function colorBox() {
+            // set canvas 
+            var canvas = document.getElementById('whiteBoard');
+            var context = canvas.getContext('2d');
+
+         // set positioning
+         var verticalPos = Math.floor(Math.random() * 399)+1;
+         // choose color randomly
+         var currentColor = getColor();
          
+         // draw in canvas
+         
+
+         }
 </script>
 
 </body>
