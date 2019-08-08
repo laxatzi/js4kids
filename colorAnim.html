@@ -83,7 +83,8 @@ document.getElementById('whiteBoard').onclick = function(){
          context.strokeStyle = "steelblue";
 
          // position line and execute
-         context.moveTo(25, 50);
+         context.beginPath();
+         context.moveTo(25, 100);
          context.lineTo(400,100);
          context.lineCap = "butt";
          context.stroke();
