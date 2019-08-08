@@ -66,15 +66,28 @@
 document.getElementById('whiteBoard').onclick = function(){
          var canvas = document.getElementById('whiteBoard');
          var context = canvas.getContext('2d');
-
+          //draw the first line
          // set line color and width
          context.lineWidth = 30;
          context.strokeStyle = "rgb(205, 40, 40)";
 
-         // draw the first line
+         // position line and execute
          context.moveTo(25, 50); // horizontal - vertical
          context.lineTo(400, 50);
+         context.lineCap = "butt";
          context.stroke();
+
+         // draw the second line 
+         //set line color and width
+         context.lineWidth = 15;
+         context.strokeStyle = "steelblue";
+
+         // position line and execute
+         context.moveTo(25, 50);
+         context.lineTo(400,100);
+         context.lineCap = "butt";
+         context.stroke();
+
       };
 </script>
 
