@@ -63,15 +63,19 @@
 //       alert("This is what you wrote: \n"+elem.innerHTML );
 //    } 
 
-      document.getElementById('whiteBoard').onclick = function(){
+document.getElementById('whiteBoard').onclick = function(){
          var canvas = document.getElementById('whiteBoard');
          var context = canvas.getContext('2d');
 
          // set line color and width
          context.lineWidth = 30;
-         context.strokeStyle = rgb(205, 40, 40);
-         
-      }
+         context.strokeStyle = "rgb(205, 40, 40)";
+
+         // draw the first line
+         context.moveTo(25, 50); // horizontal - vertical
+         context.lineTo(400, 50);
+         context.stroke();
+      };
 </script>
 
 </body>
