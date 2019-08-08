@@ -18,7 +18,13 @@
                margin: 0 auto;
                margin-bottom: 20px;
                text-align: center;
-
+               }
+         #buttons button {
+            color: white;
+               background-color: orangered;
+               padding: 10px;
+               border: 1px solid transparent;
+               border-radius: 5px;
          }
 
          #display_color {
@@ -45,10 +51,10 @@
 <body>
    <main>
          <h1>Animation with JS</h1>
-         <button id="buttons">
+         <div id="buttons">
             <button id="disco_start">Start the color parade!</button>
             <button id="disco_stop">Stop the color parade!</button>
-         </button>
+         </div>
          <canvas id="whiteBoard"></canvas>
          <p id="display_color"></p>
    </main>
