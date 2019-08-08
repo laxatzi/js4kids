@@ -61,7 +61,15 @@
          var currentColor = getColor();
          
          // draw in canvas
-         
+         context.lineWidth = 30;
+         context.strokeStyle = currentColor;
+         context.moveTo(10, verticalPos);
+         context.lineTo(400, verticalPos);
+         context.lineCap = "butt";
+         context.stroke();
+
+      // insert color to the colorBox
+      document.getElementById('displayColor').innerHTML= currentColor;
 
          }
 </script>
