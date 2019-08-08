@@ -85,7 +85,7 @@
          var currentColor = getColor();
          
          // draw in canvas
-         context.lineWidth = 30;
+         context.lineWidth = 10;
          context.strokeStyle = currentColor;
          context.moveTo(10, verticalPos);
          context.lineTo(400, verticalPos);
@@ -103,7 +103,7 @@
    document.getElementById('disco_start').onclick = function() {
       // conditional statement for preventing double running
       if(notRunning) {
-         animation = setInterval(colorBox, 100);
+         animation = setInterval(colorBox, 1000);
          notRunning = false;
       }
       else {
