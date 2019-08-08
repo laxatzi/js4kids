@@ -99,9 +99,10 @@
 
    var animation; // we gonna store setInterval here
 
+// onclick function for disco_start button
    document.getElementById('disco_start').onclick = function() {
       // conditional statement for preventing double running
-      if(notRunning==true) {
+      if(notRunning) {
          animation = setInterval(colorBox, 100);
          notRunning = false;
       }
@@ -109,6 +110,13 @@
          alert("Sorry, the program is already running");
       }
    }
+
+// onclick function for disco_stop button
+   document.getElementById('disco_stop').onclick = function() {
+          clearInterval(animation);
+          notRunning = true;
+   }
+
 </script>
 
 </body>
