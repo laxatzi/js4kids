@@ -34,9 +34,21 @@
    </main>
 <!-- scripts section -->
 <script>
+// store id value
+   var elem = document.getElementById("editable_element");
+//  code here
+   function startEdit() {
+      // make element editable
+      elem.contentEditable = true;
+      elem.focus();
+  } 
 
-      //  code here
-     
+   function stopEdit() {
+      //stop editing process
+      elem.contentEditable = false;
+      // show mark up in a message box
+      alert("This is what you wrote: \n"+elem.innerHTML );
+   } 
 </script>
 
 </body>
