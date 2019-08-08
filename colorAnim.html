@@ -68,6 +68,8 @@ document.getElementById('whiteBoard').onclick = function(){
          var context = canvas.getContext('2d');
           //draw the first line
          // set line color and width
+         context.beginPath();
+
          context.lineWidth = 30;
          context.strokeStyle = "rgb(205, 40, 40)";
 
