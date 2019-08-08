@@ -45,7 +45,12 @@
 <body>
    <main>
          <h1>Animation with JS</h1>
+         <button id="buttons">
+            <button id="disco_start">Start the color parade!</button>
+            <button id="disco_stop">Stop the color parade!</button>
+         </button>
          <canvas id="whiteBoard"></canvas>
+         <p id="display_color"></p>
    </main>
 <!-- scripts section -->
 <script>
@@ -81,7 +86,7 @@
          context.stroke();
 
       // insert color to the colorBox
-      document.getElementById('displayColor').innerHTML= currentColor;
+      document.getElementById('display_color').innerHTML= currentColor;
 
          }
 </script>
