@@ -2,6 +2,14 @@
 <html>
 <head>
 <title>Cars</title>
+<style>
+      #img_wrapper {
+         width: 500px;
+         height: 500px;
+         border: 1px solid black;
+         position: relative;
+      }
+</style>
 </head>
 <body>
     <div id="img_wrapper"></div>
@@ -12,19 +20,25 @@
        this.y = y;
     };
 
-    var tesla = new Car(10, 20);
-
    var drawCar = function(car) {
       var node = document.createElement("img");
       node.setAttribute("src", "img/car.png");
-      document.getElementById('img_wrapper').appendChild(node);
-      node.style.position="absolute";
-      node.style.left= "car.x";
-      node.style.top= "car.y";
+    var imgNode =  document.getElementById('img_wrapper').appendChild(node);
+     Object.assign(imgNode.style, {
+        position: "absolute",
+        left: car.x,
+        top: car.y,
+        border: "1px solid blue"
+     })
      
     }
+
+    var tesla = new Car(20, 20);
+    var nissan = new Car(100, 200);
+
+    drawCar(nissan);
+    drawCar(tesla);
     
-drawCar();
 </script>
 </body>
 </html>
