@@ -76,7 +76,8 @@ var target = {
    if(clickCounter< 15){
        distance}
        else if(clickCounter<20 && clickCounter>=15){
-            // for loop goes here
+            var attempts = 20 - clickCounter;
+            alert("You have "+attempts+" attempts left!");
        }
        else{
         alert("GAME OVER");
