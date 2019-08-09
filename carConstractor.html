@@ -7,9 +7,9 @@
     <div id="img_wrapper"></div>
 <script>
 // Code goes here
-    var Car = function(a, b) {
-       this.a = a;
-       this.b = b;
+    var Car = function(x, y) {
+       this.x = x;
+       this.y = y;
     };
 
     var tesla = new Car(10, 20);
@@ -18,7 +18,9 @@
       var node = document.createElement("img");
       node.setAttribute("src", "img/car.png");
       document.getElementById('img_wrapper').appendChild(node);
-      
+      node.style.position="absolute";
+      node.style.left= "car.x";
+      node.style.top= "car.y";
      
     }
     
