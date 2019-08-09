@@ -4,12 +4,25 @@
 <title>Cars</title>
 </head>
 <body>
+    <div id="img_wrapper"></div>
 <script>
 // Code goes here
     var Car = function(a, b) {
        this.a = a;
        this.b = b;
     };
+
+    var tesla = new Car(10, 20);
+
+   var drawCar = function(car) {
+      var node = document.createElement("img");
+      node.setAttribute("src", "img/car.png");
+      document.getElementById('img_wrapper').appendChild(node);
+      
+     
+    }
+    
+drawCar();
 </script>
 </body>
 </html>
