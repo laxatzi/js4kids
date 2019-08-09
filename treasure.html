@@ -40,10 +40,10 @@ var target = {
 
 //Get player feedback
   var getDistanceHint = function(distance){
-         if(distance<10){
+         if(distance<20){
              return "Boiling Hot!";
          }
-         else if (distance<20) {
+         else if (distance<30) {
              return "Really Hot!";
          }
          else if (distance < 40) {
@@ -80,8 +80,7 @@ var target = {
         if (distance< 8) {
             alert("Found the treasure in "+clickCounter+ " clicks!");
         }
-    console.log(clickCounter);
-    console.log(distanceHint);
+ 
     }, false);
 </script>
 </body>
