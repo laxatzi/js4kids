@@ -40,6 +40,7 @@ var target = {
 
 //Get player feedback
   var getDistanceHint = function(distance){
+        
          if(distance<20){
              return "Boiling Hot!";
          }
@@ -71,7 +72,16 @@ var target = {
 
      // player feedback
      var distanceHint = getDistanceHint(distance);
+    // conditional statement to limit attempts
+   if(clickCounter< 20){
+       distance}
+       else if(true){
 
+       }
+       else{
+        alert("GAME OVER");
+       }
+   
      // display feedback to html
      var feedback = document.getElementById('feedback');
      feedback.textContent = distanceHint;
