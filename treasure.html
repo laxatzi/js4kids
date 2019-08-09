@@ -30,6 +30,40 @@
     var map =  document.getElementById('id');
     map.click(function(evt){
         // handler
+     var count = 0; // track the total number of clicks (starting point zero)
+     count++ ; // increment clicks
+     // we need a function to measure the distance between the click and the spot of the buried treasure
+     var getDistance = function(evt, target){
+            var diffX = evt.offsetX - target.x;  //offsetX and offsetY, which tell us the x- and y-coordinates of the click. they consist of  built-in  js information about the event handler("click")
+            var diffY = evt.offsetY - target.y;
+            return Math.sqrt((diffX * diffX)+(diffY* diffY));
+     }
+
+
+     // player feedback
+     var getDistanceHint = function(distance){
+         if(distance<10){
+             return "Boiling Hot!";
+         }
+         else if (distance<20) {
+             return "Really Hot!";
+         }
+         else if (distance < 40) {
+             return "Hot!";
+         }
+         else if (distance , 80) {
+             return "Warm!";
+         }
+         else if (distance < 160) {
+             return "Cold!";
+         }
+         else if (distance < 360) {
+             return "Really Cold!";
+         }
+         else {
+             return "Freezing!";
+         }
+     }
     });
 </script>
 </body>
