@@ -7,7 +7,7 @@
 <h1 id="heading">Find the buried treasure!</h1>
  <img id="map" width=400 height=400
  src="http://nostarch.com/images/treasuremap.png">
- <p id="distance"></p>
+ <p id="feedback"></p>
  <!-- script -->
 <script src="https://code.jquery.com/jquery-2.1.0.js"></script>
 <script>
@@ -30,9 +30,7 @@
    var height = 400;
 
 //set up variables
-        var distance = getDistance(evt, target);
-        var distanceHint = getDistanceHint(distance);
-        var clickCounter = 0; // track the total number of clicks (starting point zero)
+  var clickCounter = 0; // track the total number of clicks (starting point zero)
 
 // the object target have two properties (x,y) that represent the coordinates of the buried treasure
 var target = {
@@ -51,7 +49,7 @@ var target = {
          else if (distance < 40) {
              return "Hot!";
          }
-         else if (distance , 80) {
+         else if (distance < 80) {
              return "Warm!";
          }
          else if (distance < 160) {
@@ -66,7 +64,7 @@ var target = {
      }
 // when  player clicks the map the  click handler bellow will be called
     var map = document.getElementById('map');
-    map.click(function(evt){
+    map.addEventListener('click', function(evt){
         clickCounter++;
     // get distance
     var distance = getDistance(evt, target);
@@ -75,16 +73,16 @@ var target = {
      var distanceHint = getDistanceHint(distance);
 
      // display feedback to html
-     var feedback = document.getElementById("distance");
-     var text = document.createTextNode(distanceHint);
-    feedback.appendChild(text);
+     var feedback = document.getElementById('feedback');
+     feedback.textContent = distanceHint;
 
     // checking if the player won 
         if (distance< 8) {
             alert("Found the treasure in "+clickCounter+ " clicks!");
         }
-    
-    });
+    console.log(clickCounter);
+    console.log(distanceHint);
+    }, false);
 </script>
 </body>
 </html>
