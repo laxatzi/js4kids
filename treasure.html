@@ -30,8 +30,8 @@
     var map =  document.getElementById('id');
     map.click(function(evt){
         // handler
-     var count = 0; // track the total number of clicks (starting point zero)
-     count++ ; // increment clicks
+     var clickCounter = 0; // track the total number of clicks (starting point zero)
+     clickCounter++ ; // increment clicks
      // we need a function to measure the distance between the click and the spot of the buried treasure
      var getDistance = function(evt, target){
             var diffX = evt.offsetX - target.x;  //offsetX and offsetY, which tell us the x- and y-coordinates of the click. they consist of  built-in  js information about the event handler("click")
@@ -65,13 +65,18 @@
              return "Freezing!";
          }
      }
-
+    
      // display feedback to html
      var distance = getDistance(evt, target);
      var distanceHint = getDistanceHint(distance);
      var feedback = document.getElementById("distance");
      var text = document.createTextNode(distance);
     feedback.appendChild(text);
+
+    // checking if the player won 
+        if (distance< 8) {
+            alert("Found the treasure in "+clickCounter+ " clicks!");
+        }
     });
 </script>
 </body>
