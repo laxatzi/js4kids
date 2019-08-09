@@ -17,32 +17,31 @@
    var randomNum = function(size) {
       return Math.floor(Math.random() * size);
    }
-// create width and height vars which represent the width and height of the img element that we use as a treasure map
-   var width = 400;
-   var height = 400;
-// the object target have two properties (x,y) that represent the coordinates of the buried treasure
-   var target = {
-       x: randomNum(width),
-       y: randomNum(height)
-   };
-
-// when the player clicks the map the  click handler bellow will be called
-    var map =  document.getElementById('id');
-    map.click(function(evt){
-        // handler
-     var clickCounter = 0; // track the total number of clicks (starting point zero)
-     clickCounter++ ; // increment clicks
-     // we need a function to measure the distance between the click and the spot of the buried treasure
-     var getDistance = function(evt, target){
+// we need a function to measure the distance between the click and the spot of the buried treasure
+   var getDistance = function(evt, target){
             var diffX = evt.offsetX - target.x;  //offsetX and offsetY, which tell us the x- and y-coordinates of the click. they consist of  built-in  js information about the event handler("click")
             var diffY = evt.offsetY - target.y;
             return Math.sqrt((diffX * diffX)+(diffY* diffY));
      }
-     var distance = getDistance(evt, target);
-     var distanceHint = getDistanceHint(distance);
-    
-     // player feedback
-     var getDistanceHint = function(distance){
+
+
+// create width and height vars which represent the width and height of the img element that we use as a treasure map
+   var width = 400;
+   var height = 400;
+
+//set up variables
+        var distance = getDistance(evt, target);
+        var distanceHint = getDistanceHint(distance);
+        var clickCounter = 0; // track the total number of clicks (starting point zero)
+
+// the object target have two properties (x,y) that represent the coordinates of the buried treasure
+var target = {
+       x: randomNum(width),
+       y: randomNum(height)
+   };
+
+//Get player feedback
+  var getDistanceHint = function(distance){
          if(distance<10){
              return "Boiling Hot!";
          }
@@ -65,18 +64,26 @@
              return "Freezing!";
          }
      }
-    
-     // display feedback to html
-     var distance = getDistance(evt, target);
+// when  player clicks the map the  click handler bellow will be called
+    var map = document.getElementById('map');
+    map.click(function(evt){
+        clickCounter++;
+    // get distance
+    var distance = getDistance(evt, target);
+
+     // player feedback
      var distanceHint = getDistanceHint(distance);
+
+     // display feedback to html
      var feedback = document.getElementById("distance");
-     var text = document.createTextNode(distance);
+     var text = document.createTextNode(distanceHint);
     feedback.appendChild(text);
 
     // checking if the player won 
         if (distance< 8) {
             alert("Found the treasure in "+clickCounter+ " clicks!");
         }
+    
     });
 </script>
 </body>
