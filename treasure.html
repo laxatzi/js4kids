@@ -17,6 +17,16 @@
    var randomNum = function(size) {
       return Math.floor(Math.random() * size);
    }
+// create width and height vars which represent the width and height of the img element that we use as a treasure map
+   var width = 400;
+   var height = 400;
+// the object target have two properties (x,y) that represent the coordinates of the buried treasure
+   var target = {
+       x: randomNum(width),
+       y: randomNum(height)
+   };
+
+
 </script>
 </body>
 </html>
