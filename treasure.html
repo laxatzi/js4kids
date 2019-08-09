@@ -38,8 +38,9 @@
             var diffY = evt.offsetY - target.y;
             return Math.sqrt((diffX * diffX)+(diffY* diffY));
      }
-
-
+     var distance = getDistance(evt, target);
+     var distanceHint = getDistanceHint(distance);
+    
      // player feedback
      var getDistanceHint = function(distance){
          if(distance<10){
@@ -64,6 +65,13 @@
              return "Freezing!";
          }
      }
+
+     // display feedback to html
+     var distance = getDistance(evt, target);
+     var distanceHint = getDistanceHint(distance);
+     var feedback = document.getElementById("distance");
+     var text = document.createTextNode(distance);
+    feedback.appendChild(text);
     });
 </script>
 </body>
